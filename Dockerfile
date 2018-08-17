@@ -22,10 +22,9 @@ COPY font-fix.conf /etc/fonts/conf.d/100-wkhtmltoimage-special.conf
 RUN apt-get update && apt-get upgrade -y && apt-get install -y python3 python3-pip
 RUN pip3 install werkzeug executor gunicorn
 
-RUN mkdir ./src
-
+COPY app.py /app.py
 EXPOSE 80
 ENTRYPOINT ["usr/local/bin/gunicorn"]
-CMD ["--chdir", "src", "-b", "0.0.0.0:80", "--log-file", "-", "app:application"]
+CMD ["-b", "0.0.0.0:80", "--log-file", "-", "app:application"]
 
 #### END WEBSERVER ####
