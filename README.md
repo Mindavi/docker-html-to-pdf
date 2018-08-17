@@ -3,14 +3,6 @@
 wkhtmltopdf in a docker container as a web service.
 Adapted from https://github.com/openlabs/docker-wkhtmltopdf-aas
 
-## Running with docker-compose
-
-Bring up the service, exposing port 2000 to communicate with the service.
-
-```sh
-docker-compose up
-```
-
 ## Building
 
 ```sh
@@ -26,7 +18,7 @@ The web service is exposed on port 80 in the container, on port 2000 on the host
 docker run --detach --publish 2000:80 mindavi/html-to-pdf
 ```
 
-The container now runs as a daemon on port 2000 on the host.
+The container now runs as a daemon, accessible via port 2000 on the host.
 
 ## Using the webservice
 
