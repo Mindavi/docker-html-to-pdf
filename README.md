@@ -14,7 +14,7 @@ docker-compose up
 ## Building
 
 ```sh
-docker build -t mindavi/html-to-pdf .
+docker build --tag mindavi/html-to-pdf .
 ```
 
 ## Running the service
@@ -23,7 +23,7 @@ Run the container with docker run and binding the ports to the host.
 The web service is exposed on port 80 in the container, on port 2000 on the host.
 
 ```sh
-docker run -d -p 2000:80 mindavi/html-to-pdf
+docker run --detach --publish 2000:80 --volume $(pwd)/src:/src mindavi/html-to-pdf
 ```
 
 The container now runs as a daemon on port 2000 on the host.
