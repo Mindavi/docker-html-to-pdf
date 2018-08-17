@@ -1,6 +1,7 @@
 version: '3.5'
 services:
     html-to-pdf:
+        image: mindavi/html-to-pdf
         build:
             context: .
             dockerfile: Dockerfile
